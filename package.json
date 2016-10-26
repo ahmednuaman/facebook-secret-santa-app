@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A simple Facebook based secret santa app",
   "main": "src/server/js/app.js",
-  "scripts": {},
+  "scripts": {
+    "server": "node ./src/server/js/app.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ahmednuaman/facebook-secret-santa-app.git"
@@ -20,6 +22,7 @@
   },
   "homepage": "https://github.com/ahmednuaman/facebook-secret-santa-app#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "lodash": "^4.16.4"
   }
