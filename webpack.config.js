@@ -8,6 +8,7 @@ const path = require('path')
 const src = path.resolve(CWD, 'src/public')
 const webpack = require('webpack')
 const WebpackExtractTextPlugin = require('extract-text-webpack-plugin')
+const WebpackHtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 const webpackDev = (entry) => PRODUCTION ? entry : ['webpack/hot/dev-server', 'webpack-hot-middleware/client', entry]
