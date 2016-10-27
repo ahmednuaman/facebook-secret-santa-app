@@ -6,5 +6,29 @@ head
   title(page-title ng-bind="title")
   link(rel="stylesheet" href="/asset/css/app.css")
   base(href="/")
-body
   script(src="/asset/js/app.js")
+body
+  div.container(ng-controller="MainController")
+    div.row
+      h1 Secret Santa 🎅
+      div.col-md-6
+        form.form-group(ng-submit="submit($event)")
+          | Santas, yo
+          div.form-inline(ng-repeat="santa in santas track by $index")
+            input.form-control(type="text" ng-model="santas[$index]")
+            button.btn-default.btn(type="button" ng-click="removeSanta($index)") -
+          div.form-inline
+            button.btn-default.btn(ng-click="submit") Submit
+            button.btn.btn-default(type="button" ng-click="addSanta()") +
+      div.col-md-6
+        div(ng-repeat="santa in secretSantas track by $index")
+          div.panel.panel-default
+            div.panel-body
+              div.row
+                div.col-md-4.text-left
+                  | {{santa}}
+                div.col-md-4.text-center
+                  | ➡️ 
+                div.col-md-4.text-right
+                  | {{secretSantas[santa]}}
+  
