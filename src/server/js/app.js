@@ -12,7 +12,7 @@ const app = express()
 app.use(express.static(path.resolve(process.cwd(), 'build')))
 app.use(bodyParser.json())
 
-app.post('/xn--8j8h', (req, res) => {
+app.post('/%F0%9F%8E%85', (req, res) => {
   const santas = _.shuffle(req.body.santas)
   const recievers = santas.slice()
 
