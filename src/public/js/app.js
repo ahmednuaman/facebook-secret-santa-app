@@ -1,4 +1,1 @@
-import module from 'module'
-
-module
-  .config(() => console.log('Yo!'))
+import './view/main'

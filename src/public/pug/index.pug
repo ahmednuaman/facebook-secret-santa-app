@@ -7,4 +7,15 @@ head
   link(rel="stylesheet" href="/asset/css/app.css")
   base(href="/")
 body
+  div(ng-controller="MainController")
+    form(ng-submit="submit($event)")
+      | Santas, yo
+      div(ng-repeat="santa in santas track by $index")
+        input(type="text" ng-model="santas[$index]")
+        button(type="button" ng-click="removeSanta($index)") -
+      button(ng-click="submit") Submit
+    button(type="button" ng-click="addSanta()") +
+    div
+      p(ng-repeat="santa in secretSantas track by $index")
+        | {{santa}} ➡️ {{secretSantas[santa]}}
   script(src="/asset/js/app.js")
