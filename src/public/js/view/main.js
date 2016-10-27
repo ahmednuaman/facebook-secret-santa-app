@@ -19,7 +19,9 @@ module
     }
 
     $scope.removeSanta = ($index) => {
-      $scope.santas.splice($index, 1);
+      if ($scope.santas.length > 1) {
+        $scope.santas.splice($index, 1);
+      }
     }
 
     $scope.presentResponse = ($response) => {
