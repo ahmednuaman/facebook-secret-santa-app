@@ -12,7 +12,7 @@ module
       console.log(arguments)
     }
 
-    $scope.santas = [''];
+    $scope.santas = ['']
 
     $scope.addSanta = () => {
       $scope.santas.push('')
@@ -20,7 +20,7 @@ module
 
     $scope.removeSanta = ($index) => {
       if ($scope.santas.length > 1) {
-        $scope.santas.splice($index, 1);
+        $scope.santas.splice($index, 1)
       }
     }
 
@@ -37,5 +37,4 @@ module
     }
 
     $scope.secretSantas = []
-
   }])
