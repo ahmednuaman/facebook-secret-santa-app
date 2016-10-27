@@ -5,10 +5,11 @@ const PORT = process.env.PORT || 3000
 const _ = require('lodash')
 const bodyParser = require('body-parser')
 const express = require('express')
+const path = require('path')
 
 const app = express()
 
-app.use(express.static('build'))
+app.use(express.static(path.resolve(process.cwd(), 'build')))
 app.use(bodyParser.json())
 
 app.post('/xn--8j8h', (req, res) => {
