@@ -7,6 +7,7 @@
     "build": "rimraf build && NODE_ENV='production' concurrently 'npm test' 'npm run webpack -- -p'",
     "browser-sync": "node ./browser-sync.js",
     "local": "concurrently 'npm run server' 'npm run browser-sync' 'npm run watch'",
+    "postinstall": "npm run build",
     "server": "node ./src/server/js/app.js",
     "start": "npm run local",
     "test": "standard",
