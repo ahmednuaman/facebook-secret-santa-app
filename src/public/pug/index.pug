@@ -6,7 +6,6 @@ html(ng-app="fbSecretSantaApp")
     title(page-title ng-bind="title") Secret Santa
     link(rel="stylesheet" href="/asset/css/app.css")
     base(href="/")
-    script(src="/asset/js/app.js")
   body
     div.container(ng-controller="MainController")
       div.row
@@ -31,3 +30,12 @@ html(ng-app="fbSecretSantaApp")
                     | ➡️ 
                   div.col-md-4.text-right
                     | {{secretSantas[santa]}}
+    script(src="/asset/js/app.js")
+    script(type="text/javascript").
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));

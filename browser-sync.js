@@ -22,6 +22,7 @@ require('browser-sync')
         webpackHotMiddleware(bundler)
       ]
     },
+    https: true,
     files: [
       `${DIR}/asset/css/*.css`,
       `${DIR}/asset/font/*`,
