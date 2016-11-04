@@ -6,10 +6,8 @@ const _ = require('lodash')
 const bodyParser = require('body-parser')
 const express = require('express')
 const path = require('path')
-
 const app = express()
 
-app.use(express.static(path.resolve(process.cwd(), 'build')))
 app.use(bodyParser.json())
 
 app.post('/%F0%9F%8E%85', (req, res) => {
@@ -24,5 +22,12 @@ app.post('/%F0%9F%8E%85', (req, res) => {
 
   res.send(result)
 })
+
+app.post('/index.html', function (req, res, next) {
+  req.method = 'GET'
+  next()
+})
+
+app.use(express.static(path.resolve(process.cwd(), 'build')))
 
 app.listen(PORT, () => console.log('Server started', PORT))

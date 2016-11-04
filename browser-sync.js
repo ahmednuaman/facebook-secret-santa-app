@@ -13,7 +13,7 @@ require('browser-sync')
   .create()
   .init({
     proxy: {
-      target: 'http://localhost:3000/',
+      target: 'http://localhost:3000/fbcanvas.html',
       middleware: [
         webpackDevMiddleware(bundler, {
           publicPath: webpackConfig.output.publicPath,
