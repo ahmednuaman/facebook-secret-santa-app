@@ -23,7 +23,7 @@ app.post('/%F0%9F%8E%85', (req, res) => {
   res.send(result)
 })
 
-app.post('/index.html', function (req, res, next) {
+app.post('/', function (req, res, next) {
   req.method = 'GET'
   next()
 })
