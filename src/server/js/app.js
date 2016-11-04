@@ -9,13 +9,13 @@ const express = require('express')
 const path = require('path')
 const app = express()
 
-const fb = new FB.Facebook(options);
+const fb = new FB.Facebook(options)
 
 app.use(express.static(path.resolve(process.cwd(), 'build')))
 app.use(bodyParser.json())
 
 app.post('/login', (req, res) => {
-	
+
 })
 
 app.post('/%F0%9F%8E%85', (req, res) => {
